@@ -5,28 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <div class="app">
+        <form class="wheatherForm">
+            <div class="location">
+                <input type="text" class="cityInput" placeholder="Enter City">
+                <button class="submitBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
 
-    <div>
-        <h2 class="heading">Weather App</h2>
-    </div>
-
-    <form class="wheatherForm">
-        <div>
-            <input type="text" class="cityInput" placeholder="Enter City">
-            <button class="submitBtn" type="submit">Get Weather</button>
+        <div class="card" style="display: none;">
+            <!-- <h1 class="cityDisplay">Hazaribag</h1>
+            <p class="tempDisplay">5°C</p>
+            <p class="humidityDisplay">Humidity : 75%</p>
+            <p class="descDisplay">Clear Sky</p>
+            <p class="errorDisplay">Please Enter City</p> -->
         </div>
-    </form>
-
-    <div class="card" style="display: none;">
-        <!-- <h1 class="cityDisplay">Hazaribag</h1>
-        <p class="tempDisplay">5°C</p>
-        <p class="humidityDisplay">Humidity : 75%</p>
-        <p class="descDisplay">Clear Sky</p>
-        <p class="errorDisplay">Please Enter City</p> -->
     </div>
 
     <script src="./script.js"></script>

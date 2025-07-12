@@ -44,12 +44,12 @@ async function getWeatherData(city) {
 
 function displayWeatherInfo(data) {
 
-    const { name: city, main: { temp, humidity }, weather: [{ description, id }] } = data
+    const { name: city, main: { temp, humidity }, weather: [{ description }] } = data
 
     card.textContent = "";
     card.style.display = "block"
 
-    const cityDisplay = document.createElement("h1");
+    const cityDisplay = document.createElement("p");
     const tempDisplay = document.createElement("p")
     const humidityDisplay = document.createElement("p")
     const descDisplay = document.createElement("p")
@@ -59,7 +59,8 @@ function displayWeatherInfo(data) {
     tempDisplay.textContent = `Temprature : ${(temp - 273.15).toFixed(2)}°C`
     humidityDisplay.textContent = `Humidity : ${humidity}%`
     descDisplay.textContent = description
-    weatherEmoji.textContent = getWeatherEmoji(id)
+    weatherEmoji.textContent = getWeatherEmoji(temp - 273.15)
+
 
 
     cityDisplay.classList.add("cityDisplay")
@@ -74,32 +75,31 @@ function displayWeatherInfo(data) {
     card.appendChild(humidityDisplay)
     card.appendChild(descDisplay)
     card.appendChild(weatherEmoji)
-
-
 }
 
 function getWeatherEmoji(weatherId) {
 
     switch (true) {
-        case (weatherId >= 200 && weatherId < 300):
-            return "⛈";
-        case (weatherId >= 300 && weatherId < 400):
-            return "🌧";
-        case (weatherId >= 500 && weatherId < 600):
-            return "🌧";
-        case (weatherId >= 600 && weatherId < 700):
-            return "❄";
-        case (weatherId >= 700 && weatherId < 800):
-            return "🌁";
-        case (weatherId === 800):
-            return "☀";
-        case (weatherId <= 801 && weatherId < 810):
-            return "☀";
+        case (weatherId >= 45):
+            return "🔥";
+        case (weatherId >= 35 && weatherId < 45):
+            return "☀️";
+        case (weatherId >= 25 && weatherId < 35):
+            return "🌤️";
+        case (weatherId >= 15 && weatherId < 25):
+            return "🌥️";
+        case (weatherId >= 5 && weatherId < 15):
+            return "❄️";
+        case (weatherId < 5):
+            return "🧊";
         default:
-            return "❓"
-    }
+            return "❓ Unknown Temperature";
 
+    }
 }
+
+console.log(getWeatherData);
+
 
 function displayError(message) {
 
