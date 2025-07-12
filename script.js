@@ -98,9 +98,6 @@ function getWeatherEmoji(weatherId) {
     }
 }
 
-console.log(getWeatherData);
-
-
 function displayError(message) {
 
     const errorDisplay = document.createElement("p");

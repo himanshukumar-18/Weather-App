@@ -95,6 +95,7 @@ input {
     border-radius: 10px;
     text-align: center;
     width: 100%;
+    transition: .5s all;
 }
 
 .cityDisplay {
